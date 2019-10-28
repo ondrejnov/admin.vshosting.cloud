@@ -1,0 +1,19 @@
+<vshcz-avatar
+  class="__avatar"
+  [class.is-first]="first"
+  [size]="40"
+  [matTooltip]="item.title"
+  [matTooltipDisabled]="!item.title"
+  [mail]="item.mail"
+  (click)="itemClicked.emit(item.id)"
+  [source]="'gravatar'"
+  *ngFor="let item of items; trackBy: _trackBy; let first = first;">
+</vshcz-avatar>
+
+<button
+  *ngIf="overflow"
+  type="button"
+  (click)="overflowClicked.emit()"
+  class="__more">
+  +{{ overflow }}
+</button>

@@ -1,0 +1,15 @@
+<div
+  class="__image"
+  [class.is-loading]="isLoading"
+  [ngStyle]="{
+    backgroundImage: imageUrl
+      ? 'url(' + imageUrl + ')'
+      : undefined
+  }">
+  <div class="__spinner-wrapper" *ngIf="isLoading">
+    <mat-spinner
+      class="__spinner"
+      [diameter]="size">
+    </mat-spinner>
+  </div>
+</div>
