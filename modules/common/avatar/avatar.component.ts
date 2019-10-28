@@ -67,7 +67,10 @@ export class AvatarComponent implements OnInit {
       case 'image':
         return this.image;
       case 'gravatar':
-        return `https://www.gravatar.com/avatar/${this._hash}.${this.extension}?s=${this.size}&d=identicon`;
+        // zablokovane avatary
+        if (['47e014f430bfc3e6ae5b131b7aa9af54', 'a87a9e3ce2e40a43bf07b74283d03476'].indexOf(this._hash) === -1) {
+          return `https://www.gravatar.com/avatar/${this._hash}.${this.extension}?s=${this.size}&d=identicon`;
+        }
       case 'clearbit':
         let web = this.web;
 
